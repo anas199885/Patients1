@@ -1,7 +1,8 @@
-package com.example.patients1
+package com.example.patients1.features
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.patients1.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
