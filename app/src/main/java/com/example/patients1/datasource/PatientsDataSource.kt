@@ -6,6 +6,6 @@ import retrofit2.http.GET
 interface PatientsDataSource {
 
     @GET("patients")
-    fun getPatients(): PatientsWrappedRemoteModel
+    suspend fun getPatients(): PatientsWrappedRemoteModel
 
 }

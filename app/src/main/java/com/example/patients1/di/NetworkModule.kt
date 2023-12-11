@@ -1,6 +1,7 @@
 package com.example.patients1.di
 
 import com.example.patients1.datasource.PatientsDataSource
+import com.example.patients1.repository.PatientsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,8 +26,16 @@ object NetworkModule {
             .build()
     }
 
-
+    @Provides
+    @Singleton
     fun  providePatientsDataSource(retrofit: Retrofit): PatientsDataSource {
         return  retrofit.create(PatientsDataSource::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun  provideRepo(dataSource: PatientsDataSource): PatientsRepository {
+        return  PatientsRepository(dataSource)
+    }
+
 }
